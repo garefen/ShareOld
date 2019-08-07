@@ -1,8 +1,9 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: 'Lato', sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +11,108 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.brand-logo img {
+  margin-top: 7px;
+}
+
+li .black-text, li .white-text {
+  transition: .4s;
+  margin-left: 30px;
+  opacity: .6;
+  letter-spacing: 1px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+li .black-text:hover, li .white-text:hover {
+  color: #01CC60 !important;
+  background-color:white !important;
+}
+
+.links {
+  margin: 20px;
+}
+
+.brand-logo {
+  margin-left: -100px;
+}
+
+.logout {
+  transition: .4s;
+  margin-left: 30px;
+  letter-spacing: 1px;
+  color: #cc3a00 !important;
+}
+
+.logout:hover {
+  color: #f38255 !important;
+  background-color:white !important;
+}
+
+form {
+  margin-top: 50px;
+}
+
+form .input-field {
+  margin-top: 40px;
+}
+
+form .input-field .btn {
+  float: right;
+}
+
+.input-field input[type=text] {
+  margin-top: 5px !important;
+  font-size: 30px !important;
+  border-bottom: 1px solid #66BB6A !important;
+  box-shadow: 0 1px 0 0 #66BB6A !important;
+}
+
+.input-field textarea {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.titulo {
+  margin: 30px 0 80px 5%;
+  font-size: 40px;
+}
+
+.account {
+  margin-top: 50px;
+}
+
+.profile-pic {
+  width: 250px;
+  height: 250px;
+  
+}
+
+blockquote {
+  border-left: 5px solid #01CC60;
+  margin: 30px 0 0 0;
+}
+
+.institution-account {
+  margin: 0 0 0 20px;
+}
+
+.ideias-conta {
+  margin-top: 100px;
+}
+
+.innerDashboard {
+  max-width: 1100px;
+  column-count: 4;
+  margin: 0 auto;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
