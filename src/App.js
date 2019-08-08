@@ -20,13 +20,13 @@ function App() {
         <Navbar/>
         {/* <SearchNav/> */}
         <Switch>
-          <Route exact path='/' component={Dashboard}/>
-          <Route exact path='/Share/' component={Dashboard}/>
+          <Route path='/Share/' component={Dashboard}/>
           <Route path='/idea/:id' component={IdeaDetails}/>
           <Route path='/signin' component={SignIn}/>
           <Route path='/signup' component={SignUp}/>
           <Route path='/create' component={CreateIdea}/>
           <Route path='/account' component={AccountDisplay}/>
+          <Route path='/' component={Dashboard}/>
         </Switch>
       </div>
     </BrowserRouter>

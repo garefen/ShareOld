@@ -28,6 +28,11 @@ class CreateIdea extends Component {
         var instances = M.CharacterCounter.init(elems, {});
     }
     render() {
+
+        const { auth } = this.props;
+        if (!auth.uid) return <Redirect to='/signIn' />;
+        
+
         return (
             <div className="container">
                 <form onSubmit={this.handleSubmit} className="white">
@@ -53,10 +58,16 @@ class CreateIdea extends Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        auth: state.firebase.auth
+    }
+}
+
 const mapDispatchToProps = (dispatch) => {
     return {
         createIdea: (idea) => dispatch(createIdea(idea))
     }
 }
 
-export default connect(null, mapDispatchToProps)(CreateIdea)
+export default connect(mapStateToProps, mapDispatchToProps)(CreateIdea)

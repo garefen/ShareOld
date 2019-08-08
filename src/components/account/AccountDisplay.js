@@ -5,23 +5,26 @@ import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import AccountSummary from './AccountSummary'
 import AccountList from './AccountIdeas'
+import { Redirect } from 'react-router-dom'
 
 class AccountDisplay extends Component {
     render() {
-        const { account } = this.props;
+        const { account, auth } = this.props;
+        if (!auth.uid) return <Redirect to='/signIn' />;
         return (
+
             <div className="container">
                  <div className="row account">
                 <div className="col s12 m12 l4">
                     <img className="circle profile-pic" alt="" src={profile} width="70%"/>
                 </div>
                 <div className="col s12 m12 l5 offset-m2">
-                    <AccountSummary account={account}/>
+                    
                 </div>
                 </div>
                 <div className="col s12 m12">
                 <div className="col s12 m12">
-                    <AccountList ideas={account}/>
+                    
                 </div>
                 </div>
                 
@@ -35,8 +38,8 @@ class AccountDisplay extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        ideas: state.firestore.ordered.ideias,
-        account : state.firestore.ordered.ideias
+        account : state.firestore.ordered.ideias,
+        auth: state.firebase.auth
     }
 }
 
